@@ -14,6 +14,8 @@ By default on first run the script will schedule itself as a task that will run 
 
 At the top of the script is a variable called $scriptLocation, edit this to the path location that you’ve saved the script to. There is also fileIncoming and fileIncomingDirect, both can be edited from their defaults of C:\temp\incoming\* and c:\temp\incoming\ respectively. The script defaults to sending the outgoing files to C:\temp\outgoing, you can change the variable $outgoingFile for point to where you'd like the new files to be placed. 
 
+The default location for that the script looks for itself is C:\temp\scripts\#Assignment.ps1, this is used for the script to schedule itself. you can edit this to suit your needs.
+
 The Script also defaults to placing the log files in the C:\temp\, this can be changed by editing the $logPath variable to fit your needs.
 
 There is also email variables that need to be set. Unfortunately, the method used by Powershell is considered obselete by Mircosoft and I do not know the infrastructure that is used by your department so these will need to be edited by the user running the script. This includes SMTP settings, email sender, email reciever, and username/password for the email sender. The script functions without the email portion if need be but you'll need to comment (#) out the function call within the function fileHandler().
