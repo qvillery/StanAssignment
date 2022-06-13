@@ -14,7 +14,6 @@ $scriptLocation = 'C:\temp\scripts\#Assignment.ps1'
 #Log file locations
 $logPath = 'C:\temp\'
 
-
 #Hashtable to hold file values
 $fileContents = @{}
 
@@ -70,7 +69,7 @@ function fileHandler() {
                 #Check to see if there are records to move to a new files
                 $properEmail = $fileContents.GetEnumerator().Where({$_.Value -like "*@abc.edu"})
 
-                #Call fileHandler function to handle the new file
+                #Check if the email address we're looking for is here, if it is we move the entries to a new array to build an outgoing file with
                 if ($properEmail) {
 
                     $newFile = $fileContents.GetEnumerator().Where({$_.Value -like "*@abc.edu"})
@@ -112,6 +111,7 @@ function checkFile() {
         }
 }
 
+#This function is used so that the script will schedule itself on first run, and on following runs it will just call checkFile to begin the script
 function checkSchedule() {
     $task = "CsvImport"
     $taskAlreadyScheduled = Get-ScheduledTask | Where-Object {$_.TaskName -like $task}
