@@ -27,7 +27,7 @@ Download the “Assignment.ps1” file
 Script should open in Windows Powershell or your default program for running .ps1. 
 
 If using Visual Studio Code, then load the file and "Run and Debug" the program (F5 is the shortcut key)
-The above method works for Windows Powershell ISE
+The previous method works for Windows Powershell ISE
 
 To run using command line: powershell -"*insert path to the script here
 
